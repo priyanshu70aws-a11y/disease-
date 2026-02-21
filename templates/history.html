@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Prediction History</h3>
+<table class="table table-striped">
+<thead><tr><th>Date</th><th>Symptoms</th><th>Disease</th><th>Confidence</th></tr></thead>
+<tbody>
+{% for r in records %}
+<tr><td>{{ r.timestamp.strftime('%Y-%m-%d %H:%M') }}</td><td>{{ r.symptoms }}</td><td>{{ r.predicted_disease }}</td><td>{{ '%.2f'|format(r.confidence) }}%</td></tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

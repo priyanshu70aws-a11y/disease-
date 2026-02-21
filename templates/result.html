@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Prediction Result</h3>
+<div class="card card-body">
+  <h4 class="text-primary">{{ prediction.predicted_disease }}</h4>
+  <p><strong>Confidence:</strong> {{ '%.2f'|format(prediction.confidence) }}%</p>
+  <p><strong>Explainability:</strong> {{ prediction.explanation }}</p>
+  <h5>Top 3 Predictions</h5>
+  <ul>{% for d, p in top3 %}<li>{{ d }} - {{ '%.2f'|format(p) }}%</li>{% endfor %}</ul>
+  <a class="btn btn-outline-primary" href="{{ url_for('user.report', prediction_id=prediction.id) }}">Download PDF Report</a>
+</div>
+{% endblock %}

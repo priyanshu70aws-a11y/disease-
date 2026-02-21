@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>User Profile</h3>
+<form method="post" class="card card-body col-md-6">
+  <label>Name</label>
+  <input class="form-control mb-2" name="name" value="{{ current_user.name }}" required>
+  <label>Email</label>
+  <input class="form-control mb-2" value="{{ current_user.email }}" disabled>
+  <label>Role</label>
+  <input class="form-control mb-3" value="{{ current_user.role }}" disabled>
+  <button class="btn btn-primary">Update</button>
+</form>
+{% endblock %}
