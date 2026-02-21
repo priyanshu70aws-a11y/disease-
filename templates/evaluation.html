@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Model Evaluation</h3>
+<table class="table table-bordered">
+<thead><tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead>
+<tbody>{% for name, m in metrics.items() %}<tr><td>{{ name }}</td><td>{{ '%.3f'|format(m.accuracy) }}</td><td>{{ '%.3f'|format(m.precision) }}</td><td>{{ '%.3f'|format(m.recall) }}</td><td>{{ '%.3f'|format(m.f1_score) }}</td></tr>{% endfor %}</tbody>
+</table>
+<div class="row">
+  <div class="col-md-6"><img class="img-fluid" src="{{ url_for('static', filename='images/charts/accuracy_comparison.png') }}"></div>
+  <div class="col-md-6"><img class="img-fluid" src="{{ url_for('static', filename='images/charts/disease_distribution.png') }}"></div>
+</div>
+{% endblock %}

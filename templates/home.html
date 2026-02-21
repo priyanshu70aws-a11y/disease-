@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 border">
+  <h1 class="display-5 fw-bold text-primary">Final Year Disease Prediction System</h1>
+  <p class="lead">AI-driven disease prediction with role-based dashboards for patients, doctors, and administrators.</p>
+  <a href="{{ url_for('user.register') }}" class="btn btn-primary btn-lg">Get Started</a>
+</div>
+{% endblock %}

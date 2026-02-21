@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Patient Dashboard</h3>
+<form method="post" action="{{ url_for('user.predict') }}" class="card card-body" id="predictForm">
+  <label class="form-label fw-bold">Select Symptoms</label>
+  <div class="row">
+  {% for symptom in symptom_columns %}
+  <div class="col-md-3"><div class="form-check"><input class="form-check-input" type="checkbox" name="symptoms" value="{{ symptom }}"><label class="form-check-label">{{ symptom.replace('_',' ').title() }}</label></div></div>
+  {% endfor %}
+  </div>
+  <label class="form-label mt-3">Or type symptoms in natural language</label>
+  <textarea class="form-control" name="symptom_text" placeholder="e.g. I have fever with headache and cough"></textarea>
+  <button class="btn btn-primary mt-3" type="submit">Predict Disease</button>
+  <div id="loadingSpinner" class="spinner-border text-primary mt-3 d-none" role="status"></div>
+</form>
+{% endblock %}
