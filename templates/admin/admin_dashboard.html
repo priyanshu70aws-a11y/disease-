@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Admin Dashboard</h3>
+<div class="row g-3">
+<div class="col-md-4"><div class="card card-body bg-light"><h4>{{ total_users }}</h4><p>Total Users</p></div></div>
+<div class="col-md-4"><div class="card card-body bg-light"><h4>{{ total_predictions }}</h4><p>Total Predictions</p></div></div>
+<div class="col-md-4"><div class="card card-body bg-light"><h4>{{ '%.2f'|format(latest_acc) }}%</h4><p>Latest Confidence</p></div></div>
+</div>
+<a href="{{ url_for('admin.users') }}" class="btn btn-primary mt-3">Manage Users</a>
+<a href="{{ url_for('admin.dataset') }}" class="btn btn-outline-primary mt-3">Manage Dataset</a>
+{% endblock %}
