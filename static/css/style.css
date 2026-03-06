@@ -1,4 +1,82 @@
-body { background: #f4f9ff; }
-.navbar-brand { font-weight: 700; }
-.card { border-radius: 12px; }
-h1, h3, h4 { color: #0d3b7d; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  --primary: #0d6efd;
+  --primary-dark: #0a58ca;
+  --accent: #17a2b8;
+  --bg: #f4f8ff;
+  --text: #1f2a37;
+  --muted: #6b7280;
+  --card-shadow: 0 12px 30px rgba(13, 110, 253, 0.12);
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(140deg, #f8fbff 0%, #eef5ff 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; }
+
+.navbar {
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.16);
+}
+.navbar-brand { font-weight: 700; letter-spacing: .3px; }
+.nav-link { font-weight: 500; }
+
+.main-shell { min-height: calc(100vh - 155px); }
+.hero-card, .glass-card, .auth-card {
+  background: #fff;
+  border: 1px solid #e5edff;
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+}
+.hero-card { padding: 2.5rem; }
+.glass-card { padding: 1.4rem; }
+
+.btn { border-radius: 10px; font-weight: 600; transition: all .25s ease; }
+.btn:hover { transform: translateY(-2px); }
+
+.form-control, .form-select {
+  border-radius: 10px;
+  border: 1px solid #d8e3ff;
+  padding: .65rem .9rem;
+}
+.form-control:focus, .form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.15);
+}
+
+.auth-wrap { min-height: 75vh; display: flex; align-items: center; justify-content: center; }
+.auth-card {
+  width: 100%; max-width: 460px; padding: 2rem;
+  animation: floatIn .5s ease;
+}
+.auth-logo { width: 50px; height: 50px; border-radius: 50%; background: #e7f0ff; display: grid; place-items: center; color: var(--primary); font-size: 1.2rem; }
+
+.table-card { border-radius: 16px; overflow: hidden; }
+.table thead { background: #eff5ff; }
+.footer {
+  background: #0d1f3a;
+  color: #dbe7ff;
+  padding: 1.2rem 0;
+  font-size: .95rem;
+}
+
+.soft-badge {
+  display: inline-flex; align-items: center; gap: .35rem;
+  background: #e8f1ff; color: #0d3b7d; padding: .25rem .65rem; border-radius: 999px; font-size: .8rem;
+}
+
+.fade-in { animation: floatIn .4s ease; }
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 576px) {
+  .hero-card { padding: 1.25rem; }
+  .auth-card { padding: 1.2rem; }
+}

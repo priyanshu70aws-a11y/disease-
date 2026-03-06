@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% block title %}Admin Dashboard • HealthPredict{% endblock %}
 {% block content %}
-<h3>Admin Dashboard</h3>
-<div class="row g-3">
-<div class="col-md-4"><div class="card card-body bg-light"><h4>{{ total_users }}</h4><p>Total Users</p></div></div>
-<div class="col-md-4"><div class="card card-body bg-light"><h4>{{ total_predictions }}</h4><p>Total Predictions</p></div></div>
-<div class="col-md-4"><div class="card card-body bg-light"><h4>{{ '%.2f'|format(latest_acc) }}%</h4><p>Latest Confidence</p></div></div>
+<h3 class="mb-3">Admin Dashboard</h3>
+<div class="row g-3 mb-3">
+  <div class="col-md-4"><div class="glass-card"><h4>{{ total_users }}</h4><p class="mb-0 text-muted">Total Users</p></div></div>
+  <div class="col-md-4"><div class="glass-card"><h4>{{ total_predictions }}</h4><p class="mb-0 text-muted">Total Predictions</p></div></div>
+  <div class="col-md-4"><div class="glass-card"><h4>{{ '%.2f'|format(latest_acc) }}%</h4><p class="mb-0 text-muted">Latest Confidence</p></div></div>
 </div>
-<a href="{{ url_for('admin.users') }}" class="btn btn-primary mt-3">Manage Users</a>
-<a href="{{ url_for('admin.dataset') }}" class="btn btn-outline-primary mt-3">Manage Dataset</a>
+<a href="{{ url_for('admin.users') }}" class="btn btn-primary">Manage Users</a>
+<a href="{{ url_for('admin.dataset') }}" class="btn btn-outline-primary">Manage Dataset</a>
 {% endblock %}

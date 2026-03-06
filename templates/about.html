@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
+{% block title %}About • HealthPredict{% endblock %}
 {% block content %}
-<h3>About Project</h3>
-<p>This healthcare-themed final year project predicts diseases from symptoms using machine learning and explainable insights.</p>
-<p>Team: AI Developer Squad.</p>
+<div class="glass-card">
+  <h3>About HealthPredict</h3>
+  <p class="text-muted">HealthPredict is a production-ready healthcare AI platform for fast disease risk estimation from symptom patterns.</p>
+  <div class="row g-3">
+    <div class="col-md-4"><div class="p-3 bg-light rounded-3 h-100"><h6>Mission</h6><p class="mb-0">Support informed decisions with interpretable ML predictions.</p></div></div>
+    <div class="col-md-4"><div class="p-3 bg-light rounded-3 h-100"><h6>Technology</h6><p class="mb-0">Flask, SQLAlchemy, Scikit-learn, Bootstrap 5, and robust data workflows.</p></div></div>
+    <div class="col-md-4"><div class="p-3 bg-light rounded-3 h-100"><h6>Team</h6><p class="mb-0">Built by Final Year AI/Software Engineering Team.</p></div></div>
+  </div>
+</div>
 {% endblock %}

@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
+from sqlalchemy import or_
 
 from model import db, User, Prediction, DatasetMeta
 from routes.user_routes import role_required
@@ -29,13 +30,17 @@ def users():
     """Allows admin to view, create, and delete users."""
     if request.method == "POST":
         name = request.form.get("name", "").strip()
+        username = request.form.get("username", "").strip().lower()
         email = request.form.get("email", "").strip().lower()
         password = request.form.get("password", "")
         role = request.form.get("role", "Patient")
-        if not all([name, email, password]):
+        if not all([name, username, email, password]):
             flash("All fields are required.", "warning")
             return redirect(url_for("admin.users"))
-        user = User(name=name, email=email, role=role)
+        if User.query.filter(or_(User.email == email, User.username == username)).first():
+            flash("Username or email already exists.", "danger")
+            return redirect(url_for("admin.users"))
+        user = User(name=name, username=username, email=email, role=role)
         user.set_password(password)
         db.session.add(user)
         db.session.commit()
