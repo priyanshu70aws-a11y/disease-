@@ -1,0 +1,248 @@
+{
+  "version": "2.0",
+  "symptoms": [
+    "fever",
+    "high_fever",
+    "cough",
+    "dry_cough",
+    "fatigue",
+    "headache",
+    "nausea",
+    "vomiting",
+    "rash",
+    "joint_pain",
+    "chest_pain",
+    "breathlessness",
+    "sore_throat",
+    "runny_nose",
+    "abdominal_pain",
+    "diarrhea",
+    "body_ache",
+    "chills",
+    "loss_of_taste",
+    "loss_of_smell",
+    "sweating",
+    "dizziness",
+    "blurred_vision",
+    "anxiety",
+    "insomnia",
+    "weight_loss"
+  ],
+  "diseases": [
+    {
+      "name": "Flu",
+      "symptoms": [
+        "fever",
+        "cough",
+        "fatigue",
+        "headache",
+        "body_ache",
+        "chills",
+        "sore_throat"
+      ],
+      "description": "Flu related symptom profile"
+    },
+    {
+      "name": "Common Cold",
+      "symptoms": [
+        "cough",
+        "runny_nose",
+        "sore_throat",
+        "headache"
+      ],
+      "description": "Common Cold related symptom profile"
+    },
+    {
+      "name": "Dengue",
+      "symptoms": [
+        "high_fever",
+        "headache",
+        "rash",
+        "joint_pain",
+        "nausea",
+        "vomiting",
+        "body_ache"
+      ],
+      "description": "Dengue related symptom profile"
+    },
+    {
+      "name": "Pneumonia",
+      "symptoms": [
+        "fever",
+        "cough",
+        "chest_pain",
+        "breathlessness",
+        "fatigue"
+      ],
+      "description": "Pneumonia related symptom profile"
+    },
+    {
+      "name": "Migraine",
+      "symptoms": [
+        "headache",
+        "nausea",
+        "dizziness",
+        "blurred_vision"
+      ],
+      "description": "Migraine related symptom profile"
+    },
+    {
+      "name": "Food Poisoning",
+      "symptoms": [
+        "abdominal_pain",
+        "nausea",
+        "vomiting",
+        "diarrhea",
+        "fever"
+      ],
+      "description": "Food Poisoning related symptom profile"
+    },
+    {
+      "name": "COVID-19",
+      "symptoms": [
+        "fever",
+        "dry_cough",
+        "fatigue",
+        "loss_of_taste",
+        "loss_of_smell",
+        "breathlessness"
+      ],
+      "description": "COVID-19 related symptom profile"
+    },
+    {
+      "name": "Asthma",
+      "symptoms": [
+        "breathlessness",
+        "chest_pain",
+        "dry_cough",
+        "anxiety"
+      ],
+      "description": "Asthma related symptom profile"
+    },
+    {
+      "name": "Tuberculosis",
+      "symptoms": [
+        "cough",
+        "weight_loss",
+        "fatigue",
+        "sweating",
+        "fever",
+        "chest_pain"
+      ],
+      "description": "Tuberculosis related symptom profile"
+    },
+    {
+      "name": "Malaria",
+      "symptoms": [
+        "high_fever",
+        "chills",
+        "sweating",
+        "headache",
+        "nausea",
+        "body_ache"
+      ],
+      "description": "Malaria related symptom profile"
+    },
+    {
+      "name": "Typhoid",
+      "symptoms": [
+        "high_fever",
+        "abdominal_pain",
+        "fatigue",
+        "headache",
+        "diarrhea"
+      ],
+      "description": "Typhoid related symptom profile"
+    },
+    {
+      "name": "Hypertension",
+      "symptoms": [
+        "headache",
+        "dizziness",
+        "chest_pain",
+        "anxiety",
+        "insomnia"
+      ],
+      "description": "Hypertension related symptom profile"
+    },
+    {
+      "name": "Diabetes",
+      "symptoms": [
+        "fatigue",
+        "weight_loss",
+        "blurred_vision"
+      ],
+      "description": "Diabetes related symptom profile"
+    },
+    {
+      "name": "Anemia",
+      "symptoms": [
+        "fatigue",
+        "dizziness",
+        "headache",
+        "breathlessness"
+      ],
+      "description": "Anemia related symptom profile"
+    },
+    {
+      "name": "Allergic Rhinitis",
+      "symptoms": [
+        "runny_nose",
+        "sore_throat",
+        "cough",
+        "headache"
+      ],
+      "description": "Allergic Rhinitis related symptom profile"
+    },
+    {
+      "name": "Gastritis",
+      "symptoms": [
+        "abdominal_pain",
+        "nausea",
+        "vomiting",
+        "anxiety"
+      ],
+      "description": "Gastritis related symptom profile"
+    },
+    {
+      "name": "Sinusitis",
+      "symptoms": [
+        "headache",
+        "runny_nose",
+        "sore_throat",
+        "fatigue"
+      ],
+      "description": "Sinusitis related symptom profile"
+    },
+    {
+      "name": "Arthritis",
+      "symptoms": [
+        "joint_pain",
+        "body_ache",
+        "fatigue"
+      ],
+      "description": "Arthritis related symptom profile"
+    },
+    {
+      "name": "Bronchitis",
+      "symptoms": [
+        "cough",
+        "dry_cough",
+        "chest_pain",
+        "fatigue"
+      ],
+      "description": "Bronchitis related symptom profile"
+    },
+    {
+      "name": "Panic Disorder",
+      "symptoms": [
+        "anxiety",
+        "sweating",
+        "dizziness",
+        "chest_pain",
+        "insomnia"
+      ],
+      "description": "Panic Disorder related symptom profile"
+    }
+  ]
+}

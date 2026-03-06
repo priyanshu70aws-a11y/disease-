@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Model Evaluation • HealthPredict{% endblock %}
+{% block content %}
+<div class="glass-card mb-3 table-card">
+<h3>Model Evaluation</h3>
+<div class="table-responsive"><table class="table table-bordered mb-0">
+<thead><tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead>
+<tbody>{% for name, m in metrics.items() %}<tr><td>{{ name }}</td><td>{{ '%.3f'|format(m.accuracy) }}</td><td>{{ '%.3f'|format(m.precision) }}</td><td>{{ '%.3f'|format(m.recall) }}</td><td>{{ '%.3f'|format(m.f1_score) }}</td></tr>{% else %}<tr><td colspan="5" class="text-center text-muted">No metrics yet. Train model first.</td></tr>{% endfor %}</tbody>
+</table></div></div>
+<div class="row g-3">
+  <div class="col-md-6"><img class="img-fluid rounded-4 border" src="{{ url_for('static', filename='images/charts/accuracy_comparison.png') }}"></div>
+  <div class="col-md-6"><img class="img-fluid rounded-4 border" src="{{ url_for('static', filename='images/charts/disease_distribution.png') }}"></div>
+</div>
+{% endblock %}

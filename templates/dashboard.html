@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard • HealthPredict{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <h3 class="mb-0">Patient Dashboard</h3>
+    <small class="text-muted">Submit symptoms and receive AI disease predictions.</small>
+  </div>
+  <a href="{{ url_for('user.predict_page') }}" class="btn btn-outline-primary">Open Full Prediction Page</a>
+</div>
+
+<form method="post" action="{{ url_for('user.predict') }}" class="glass-card" id="predictForm" data-loading-btn>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">Search symptom</label>
+      <input class="form-control" id="symptomSearch" placeholder="Type symptom keyword...">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">Natural Language Input</label>
+      <textarea class="form-control" name="symptom_text" rows="1" placeholder="I have fever, headache and cough"></textarea>
+    </div>
+  </div>
+
+  <label class="fw-semibold mb-2">Select Symptoms</label>
+  <div class="row" id="symptomGrid">
+    {% for symptom in symptom_columns %}
+    <div class="col-6 col-md-4 col-lg-3 symptom-item mb-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="symptoms" value="{{ symptom }}" id="{{ symptom }}">
+        <label class="form-check-label" for="{{ symptom }}">{{ symptom.replace('_',' ').title() }}</label>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <button class="btn btn-primary mt-2" type="submit">Predict Disease</button>
+  <div id="loadingSpinner" class="spinner-border text-primary mt-3 d-none" role="status"></div>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('symptomSearch');
+  const items = [...document.querySelectorAll('.symptom-item')];
+  search?.addEventListener('input', () => {
+    const q = search.value.toLowerCase();
+    items.forEach(item => {
+      item.style.display = item.innerText.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+});
+</script>
+{% endblock %}

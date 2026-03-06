@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}HealthPredict AI Platform{% endblock %}
+{% block content %}
+<div class="hero-card fade-in mb-4">
+  <span class="soft-badge mb-2"><i class="bi bi-stars"></i> AI-Enabled Healthcare Platform</span>
+  <h1 class="display-6">Professional Disease Prediction for Patients, Doctors, and Admin Teams</h1>
+  <p class="text-muted">Predict likely diseases using symptoms, view model confidence, generate reports, and monitor evaluation metrics in one secure SaaS-ready application.</p>
+  <div class="d-flex gap-2 flex-wrap">
+    <a href="{{ url_for('user.register') }}" class="btn btn-primary">Get Started</a>
+    <a href="{{ url_for('user.about') }}" class="btn btn-outline-primary">Learn More</a>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-4"><div class="glass-card h-100"><h5>Accurate Predictions</h5><p class="text-muted mb-0">Top-3 diseases with confidence and explainability insights.</p></div></div>
+  <div class="col-md-4"><div class="glass-card h-100"><h5>Role-Based Security</h5><p class="text-muted mb-0">Secure sessions, hashed passwords, and protected routes.</p></div></div>
+  <div class="col-md-4"><div class="glass-card h-100"><h5>Clinical Reporting</h5><p class="text-muted mb-0">Download PDF reports and track full prediction history.</p></div></div>
+</div>
+{% endblock %}

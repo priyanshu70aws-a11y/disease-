@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Dataset Management</h3>
+<div class="card card-body mb-3">
+  <p><strong>Dataset Exists:</strong> {{ info.exists }}</p>
+  <p><strong>Rows:</strong> {{ info.rows }}</p>
+  <p><strong>Columns:</strong> {{ info.columns|join(', ') }}</p>
+</div>
+<form method="post" enctype="multipart/form-data" class="card card-body mb-3">
+  <input type="file" name="dataset_file" accept=".csv" class="form-control mb-2" required>
+  <button class="btn btn-primary">Upload New Dataset</button>
+</form>
+<ul class="list-group">{% for h in history %}<li class="list-group-item">{{ h.file_name }} - {{ h.rows }} rows - {{ h.uploaded_at.strftime('%Y-%m-%d') }}</li>{% endfor %}</ul>
+{% endblock %}

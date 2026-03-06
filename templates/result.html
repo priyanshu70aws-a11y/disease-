@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Prediction Result • HealthPredict{% endblock %}
+{% block content %}
+<div class="glass-card fade-in">
+  <h3 class="mb-2">Prediction Result</h3>
+  <p class="mb-1"><strong>Predicted Disease:</strong> <span class="text-primary">{{ prediction.predicted_disease }}</span></p>
+  <p class="mb-1"><strong>Confidence:</strong> {{ '%.2f'|format(prediction.confidence) }}%</p>
+  <p><strong>Explainable AI:</strong> {{ prediction.explanation }}</p>
+
+  <h5 class="mt-3">Top 3 Most Probable Diseases</h5>
+  <div class="table-responsive table-card">
+    <table class="table mb-0">
+      <thead><tr><th>Disease</th><th>Probability</th></tr></thead>
+      <tbody>
+      {% for d, p in top3 %}
+      <tr><td>{{ d }}</td><td>{{ '%.2f'|format(p) }}%</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3 d-flex gap-2 flex-wrap">
+    <a class="btn btn-outline-primary" href="{{ url_for('user.report', prediction_id=prediction.id) }}">Download PDF Report</a>
+    <a class="btn btn-primary" href="{{ url_for('user.dashboard') }}">Predict Again</a>
+  </div>
+</div>
+{% endblock %}
